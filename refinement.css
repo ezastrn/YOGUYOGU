@@ -21,13 +21,13 @@
 .hero-frame,
 .bowl-stage {
   display: block;
-  width: min(84%, 450px);
+  width: min(70%, 450px);
   aspect-ratio: 1;
   bottom: 2%;
   z-index: 2;
   overflow: hidden;
   border-radius: 50%;
-  background: #f2c230;   
+  background: transparent;   
   box-shadow: inset 0 0 0 1px rgba(23, 75, 149, 0.08);
 }
 
