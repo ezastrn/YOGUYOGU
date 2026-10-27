@@ -11,6 +11,23 @@
   filter: none;
 }
 
+/* Hero product: one circular frame, scaled from its own container. */
+.bowl-stage {
+  display: grid;
+  width: min(76%, 460px);
+  aspect-ratio: 1;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff8d8, #f3ce54 74%);
+}
+
+.bowl-stage img {
+  width: 122%;
+  max-width: none;
+  mix-blend-mode: multiply;
+}
+
 .products {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -18,8 +35,8 @@
 }
 
 .product-card {
-  display: grid;
-  grid-template-rows: auto minmax(250px, 1fr) auto;
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   height: auto;
   padding: 0;
@@ -69,9 +86,9 @@
   position: static;
   z-index: auto;
   display: block;
-  width: 110%;
+  width: 116%;
   max-width: none;
-  height: 110%;
+  height: 116%;
   object-fit: contain;
   filter: drop-shadow(0 17px 11px rgba(23, 75, 149, 0.16));
   transform: none;
@@ -94,12 +111,16 @@
   background: radial-gradient(circle at 35% 28%, #e8f7fc, #abd5e4 72%);
 }
 
-.product-info {
-  position: relative;
-  bottom: auto;
-  left: auto;
+.product-footer {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
   min-height: 126px;
-  padding-right: 58px;
+  gap: 18px;
+}
+
+.product-info {
+  min-width: 0;
 }
 
 .product-info p {
@@ -108,33 +129,49 @@
 }
 
 .add-button {
-  right: 0;
-  bottom: 40px;
+  position: static;
+  flex: 0 0 42px;
+  margin-bottom: 3px;
 }
 
 @media (max-width: 780px) {
+  .hero-visual {
+    display: grid;
+    place-items: end center;
+  }
+
+  .bowl-stage {
+    bottom: -2%;
+    left: auto;
+    width: min(78vw, 310px);
+  }
+
+  .handwritten {
+    right: -2%;
+    bottom: 6%;
+  }
+
   .products {
     grid-template-columns: 1fr;
     gap: 42px;
   }
 
   .product-card {
-    grid-template-rows: auto auto auto;
     width: min(100%, 430px);
     margin: 0 auto;
   }
 
   .product-photo {
-    width: min(76vw, 310px);
-    margin-bottom: 20px;
+    width: min(72vw, 300px);
+    margin-bottom: 24px;
   }
 
-  .product-info {
+  .product-footer {
     min-height: 100px;
-    padding-right: 60px;
+    gap: 14px;
   }
 
   .add-button {
-    bottom: 30px;
+    margin-bottom: 2px;
   }
 }
