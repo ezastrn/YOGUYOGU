@@ -1,0 +1,140 @@
+/*
+ * YoguYogu visual refinement
+ *
+ * These rules intentionally sit after styles.css.  Product assets are treated
+ * as isolated objects, so their placement never depends on the viewport's
+ * zoom level or overlaps the descriptive copy.
+ */
+
+.brand img,
+.hero-logo {
+  filter: none;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 56px);
+}
+
+.product-card {
+  display: grid;
+  grid-template-rows: auto minmax(250px, 1fr) auto;
+  min-width: 0;
+  height: auto;
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+  box-shadow: none;
+}
+
+.product-card::before {
+  display: none;
+}
+
+.product-index {
+  position: static;
+  z-index: auto;
+  padding-bottom: 14px;
+}
+
+.product-photo {
+  position: relative;
+  display: grid;
+  width: min(100%, 340px);
+  aspect-ratio: 1;
+  height: auto;
+  margin: 0 auto 26px;
+  overflow: hidden;
+  place-items: center;
+  border-radius: 50%;
+  isolation: isolate;
+}
+
+.product-photo::before {
+  position: absolute;
+  z-index: -1;
+  inset: 9%;
+  display: block;
+  width: auto;
+  height: auto;
+  border: 1px solid rgba(23, 75, 149, 0.22);
+  border-radius: 50%;
+  background: transparent;
+  content: "";
+  transform: none;
+}
+
+.product-photo img {
+  position: static;
+  z-index: auto;
+  display: block;
+  width: 110%;
+  max-width: none;
+  height: 110%;
+  object-fit: contain;
+  filter: drop-shadow(0 17px 11px rgba(23, 75, 149, 0.16));
+  transform: none;
+  transition: transform 0.35s ease;
+}
+
+.product-card:hover .product-photo img {
+  transform: scale(1.04) rotate(0deg);
+}
+
+.product-honey .product-photo {
+  background: radial-gradient(circle at 35% 28%, #fff4bd, #f3cf52 72%);
+}
+
+.product-berry .product-photo {
+  background: radial-gradient(circle at 35% 28%, #ffe7e9, #ebb3bd 72%);
+}
+
+.product-oreo .product-photo {
+  background: radial-gradient(circle at 35% 28%, #e8f7fc, #abd5e4 72%);
+}
+
+.product-info {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  min-height: 126px;
+  padding-right: 58px;
+}
+
+.product-info p {
+  max-width: 190px;
+  line-height: 1.45;
+}
+
+.add-button {
+  right: 0;
+  bottom: 40px;
+}
+
+@media (max-width: 780px) {
+  .products {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .product-card {
+    grid-template-rows: auto auto auto;
+    width: min(100%, 430px);
+    margin: 0 auto;
+  }
+
+  .product-photo {
+    width: min(76vw, 310px);
+    margin-bottom: 20px;
+  }
+
+  .product-info {
+    min-height: 100px;
+    padding-right: 60px;
+  }
+
+  .add-button {
+    bottom: 30px;
+  }
+}
