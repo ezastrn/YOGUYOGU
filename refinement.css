@@ -26,23 +26,18 @@
 }
 
 .sun-disc {
-  z-index: 0;
-  width: min(84%, 450px);
-  top: 2%;
+  display: none;
 }
 
 .hero-frame {
-  z-index: 1;
-  width: min(67%, 360px);
-  height: 76%;
-  top: 11%;
+  display: none;
 }
 
 .bowl-stage {
   display: block;
-  width: min(64%, 360px);
+  width: min(84%, 450px);
   aspect-ratio: 1;
-  bottom: 3%;
+  bottom: 2%;
   z-index: 2;
   overflow: hidden;
   border-radius: 50%;
@@ -52,13 +47,14 @@
 
 .bowl-stage img {
   display: block;
-  width: 118%;
-  height: 118%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
   max-width: none;
   object-fit: contain;
   mix-blend-mode: multiply;
   border-radius: 0;
-  filter: contrast(1.2) saturate(1.12) drop-shadow(0 18px 12px rgba(15, 54, 80, 0.26));
+  filter: contrast(1.7) saturate(1.16) drop-shadow(0 18px 12px rgba(15, 54, 80, 0.28));
 }
 
 .handwritten,
@@ -299,23 +295,12 @@
   }
 
   .bowl-stage {
-    width: min(68vw, 242px);
-    bottom: 1%;
+    width: min(82vw, 300px);
+    bottom: 2%;
   }
 
   .handwritten {
     display: none;
-  }
-
-  .sun-disc {
-    width: min(82vw, 300px);
-    top: 3%;
-  }
-
-  .hero-frame {
-    width: min(66vw, 245px);
-    height: 74%;
-    top: 12%;
   }
 
   .berry-a {
