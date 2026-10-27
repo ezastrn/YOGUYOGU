@@ -14,5 +14,5 @@ updateParallax();
 
 const toast = document.querySelector('.toast');
 const wa = document.querySelector('#whatsapp-link');
-document.querySelectorAll('.add-button').forEach((button) => button.addEventListener('click', () => { const product = button.dataset.product; wa.href = `https://wa.me/?text=${encodeURIComponent(`Halo YoguYogu, saya ingin pesan ${product}. Apakah masih tersedia?`)}`; toast.classList.add('show'); window.setTimeout(() => toast.classList.remove('show'), 3200); document.querySelector('#order').scrollIntoView({ behavior: 'smooth' }); }));
+document.querySelectorAll('.add-button').forEach((button) => button.addEventListener('click', () => { const product = button.dataset.product; wa.href = `https://api.whatsapp.com/send/?phone=6287845600062&text=${encodeURIComponent(`Halo YoguYogu, saya ingin pesan ${product}. Apakah masih tersedia?`)}&type=phone_number&app_absent=0`; toast.classList.add('show'); window.setTimeout(() => toast.classList.remove('show'), 3200); document.querySelector('#order').scrollIntoView({ behavior: 'smooth' }); }));
 document.querySelector('#year').textContent = new Date().getFullYear();
