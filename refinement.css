@@ -20,9 +20,15 @@
 .sun-disc,
 .hero-frame,
 .bowl-stage {
-  left: 50%;
-  right: auto;
-  transform: translateX(-50%);
+  display: block;
+  width: min(84%, 450px);
+  aspect-ratio: 1;
+  bottom: 2%;
+  z-index: 2;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #f2c230;   
+  box-shadow: inset 0 0 0 1px rgba(23, 75, 149, 0.08);
 }
 
 .sun-disc {
