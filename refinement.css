@@ -14,12 +14,13 @@
 /* Hero product: one circular frame, scaled from its own container. */
 .bowl-stage {
   display: grid;
-  width: min(76%, 460px);
+  width: min(72%, 420px);
   aspect-ratio: 1;
   place-items: center;
   overflow: hidden;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #fff8d8, #f3ce54 74%);
+  background: #f8fbf8;
+  box-shadow: inset 0 0 0 1px rgba(23, 75, 149, 0.12);
 }
 
 .bowl-stage img {
@@ -99,16 +100,9 @@
   transform: scale(1.04) rotate(0deg);
 }
 
-.product-honey .product-photo {
-  background: radial-gradient(circle at 35% 28%, #fff4bd, #f3cf52 72%);
-}
-
-.product-berry .product-photo {
-  background: radial-gradient(circle at 35% 28%, #ffe7e9, #ebb3bd 72%);
-}
-
-.product-oreo .product-photo {
-  background: radial-gradient(circle at 35% 28%, #e8f7fc, #abd5e4 72%);
+.product-photo {
+  background: #f8faf7;
+  box-shadow: inset 0 0 0 1px rgba(23, 75, 149, 0.1);
 }
 
 .product-footer {
@@ -120,6 +114,9 @@
 }
 
 .product-info {
+  position: static;
+  bottom: auto;
+  left: auto;
   min-width: 0;
 }
 
@@ -134,6 +131,63 @@
   margin-bottom: 3px;
 }
 
+/* Order section: text and product use separate columns with a dedicated mask. */
+.order {
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.8fr);
+  column-gap: clamp(46px, 9vw, 150px);
+}
+
+.order-frame {
+  display: none;
+}
+
+.order-copy {
+  max-width: 480px;
+}
+
+.order h2 {
+  margin: 0 0 28px;
+}
+
+.order-description {
+  max-width: 340px;
+  margin: 0 0 22px;
+}
+
+.order-copy small {
+  margin-top: 18px;
+}
+
+.order-visual {
+  display: grid;
+  position: relative;
+  width: min(100%, 420px);
+  margin: 0;
+  justify-self: end;
+}
+
+.order-product-frame {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 1;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #f8faf7;
+  box-shadow: inset 0 0 0 1px rgba(23, 75, 149, 0.12);
+}
+
+.order-product-frame img {
+  width: 118%;
+  max-width: none;
+  filter: drop-shadow(0 20px 14px rgba(23, 75, 149, 0.16));
+}
+
+.order-visual > span {
+  right: -2%;
+  bottom: 3%;
+}
+
 @media (max-width: 780px) {
   .hero-visual {
     display: grid;
@@ -141,9 +195,9 @@
   }
 
   .bowl-stage {
-    bottom: -2%;
+    bottom: 0;
     left: auto;
-    width: min(78vw, 310px);
+    width: min(72vw, 286px);
   }
 
   .handwritten {
@@ -173,5 +227,37 @@
 
   .add-button {
     margin-bottom: 2px;
+  }
+
+  .order {
+    grid-template-columns: 1fr;
+    row-gap: 36px;
+    padding: 78px 22px 52px;
+  }
+
+  .order-copy {
+    max-width: 100%;
+  }
+
+  .order h2 {
+    margin-bottom: 22px;
+    font-size: clamp(3.7rem, 17vw, 4.5rem);
+  }
+
+  .order-description {
+    max-width: 310px;
+    margin-bottom: 20px;
+  }
+
+  .order-visual {
+    width: min(78vw, 330px);
+    margin: 0 auto;
+    justify-self: center;
+  }
+
+  .order-visual > span {
+    right: -4%;
+    bottom: 2%;
+    font-size: 1.15rem;
   }
 }
